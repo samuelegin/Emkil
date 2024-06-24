@@ -1,0 +1,739 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro&display=swap");
+:root {
+    --primary-color: rgb(29, 27, 27);
+    --secondary-color: #4f4432;
+    --white: #fff;
+    --gray: grey;
+    --primary-font: "kanit";
+    --secondary-font: "luckiest guy";
+    --mystic: "cinzel";
+    --tertiary-font: "Advent Pro";
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--primary-font);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    width: fit-content;
+    font-size: 17px;
+    font-family: monospace;
+    line-height: 1.4;
+    font-weight: bold;
+    background: 
+      linear-gradient(#000 0 0) left ,
+      linear-gradient(#000 0 0) right;
+    background-repeat: no-repeat; 
+    border-right: 5px solid #0000;
+    border-left: 5px solid #0000;
+    background-origin: border-box;
+    position: relative;
+    animation: l9-0 2s infinite;
+  }
+  .loader::before {
+    content:"Loading";
+  }
+  .loader::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 22px;
+    height: 60px;
+    background: 
+     linear-gradient(90deg,#000 4px,#0000 0 calc(100% - 4px),#000 0) bottom            /22px 20px,
+     linear-gradient(90deg,red  4px,#0000 0 calc(100% - 4px),red  0) bottom 10px left 0/22px 6px,
+     linear-gradient(#000 0 0) bottom 3px left 0  /22px 8px,
+     linear-gradient(#000 0 0) bottom 0   left 50%/8px  16px;
+   background-repeat: no-repeat;
+   animation: l9-1 2s infinite;
+  }
+  @keyframes l9-0{
+    0%,25%    {background-size: 50% 100%}
+    25.1%,75% {background-size: 0 0,50% 100%}
+    75.1%,100%{background-size: 0 0,0 0}
+  }
+  @keyframes l9-1{
+    25%   { background-position:bottom, bottom 54px left 0,bottom 3px left 0,bottom 0 left 50%;left:0}
+    25.1% { background-position:bottom, bottom 10px left 0,bottom 3px left 0,bottom 0 left 50%;left:0}
+    50%   { background-position:bottom, bottom 10px left 0,bottom 3px left 0,bottom 0 left 50%;left:calc(100% - 22px)}
+    75%   { background-position:bottom, bottom 54px left 0,bottom 3px left 0,bottom 0 left 50%;left:calc(100% - 22px)}
+    75.1% { background-position:bottom, bottom 10px left 0,bottom 3px left 0,bottom 0 left 50%;left:calc(100% - 22px)}
+}
+
+.content .loaded{
+    display: block;
+}
+
+.navlinks {
+    background-color: var(--white);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+video {
+    height: 2rem;
+    width: 2rem;
+}
+
+.navlinks a {
+    padding: 0.9rem;
+    display: flex;
+    transition: ease-in 0s;
+}
+
+.navlinks a:hover {
+    transform: scale(1.3);
+}
+
+.pages {
+    height: 100vh;
+    display: flex;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+#home {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: var(--white);
+    margin-top: 3.5rem;
+}
+
+.card-cont {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    height: 20rem;
+    width: 17rem;
+    align-items: center;
+    text-align: center;
+    box-shadow: hsl(0%, 0%, 80%) 0 0 7rem;
+    border: 1px solid grey;
+    margin: auto;
+    border-radius: 1rem;
+}
+
+.img-cont {
+    width: 100%;
+    height: 100%;
+}
+
+.img-cont img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+}
+
+#likes {
+    border: none;
+    background: none;
+    font-size: 2rem;
+    color: grey;
+}
+
+#like {
+    border: none;
+    background: none;
+}
+
+i.bi-heart-fill {
+    font-size: 2rem;
+}
+
+/* signup styling */
+
+#signup {
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    bottom: max-content;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: var(--white);
+}
+
+.signup-img {
+    height: 100%;
+    padding: 1rem;
+}
+
+.sign {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign a {
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.signup-img img {
+    height: 18rem;
+    width: 18rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    margin: 1rem 15%;
+    justify-content: center;
+}
+
+.signup-form {
+    height: 100%;
+    gap: 1rem;
+}
+
+.signup {
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-top: 2rem;
+    border: 1px solid black;
+}
+
+input[type="text"] {
+    padding: 1rem 1.2rem;
+    outline-color: rgb(80, 77, 77);
+    border-radius: 1.5rem;
+    border: 1px solid #000;
+}
+
+input[type="password"] {
+    padding: 1rem 1.2rem;
+    outline-color: rgb(80, 77, 77);
+    border-radius: 1.5rem;
+    border: 1px solid #000;
+}
+
+input[type="email"] {
+    padding: 1rem 1.2rem;
+    outline-color: rgb(80, 77, 77);
+    border-radius: 1.5rem;
+    border: 1px solid #000;
+}
+
+.tnc {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 0.3rem;
+}
+
+/* Leaderboard styling */
+
+#Leaderboard {
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding: 1rem;
+    padding-top: 1rem;
+    background-color: var(--white);
+}
+
+#Leaderboard h1 {
+    font-family: var(--mystic);
+    margin-bottom: 0.5rem;
+}
+
+.leaderboard-cont {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.hold-cont {
+    gap: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.position,
+.point {
+    font-family: var(--secondary-font);
+}
+
+.leadername {
+    font-weight: 1000;
+}
+
+.position {
+    height: 4rem;
+    width: 4rem;
+    border: 2px solid grey;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.leadername-cont {
+    border: 2px solid grey;
+    display: flex;
+    justify-content: space-between;
+    width: 20rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.8rem;
+    height: 4rem;
+    align-items: center;
+}
+
+.leaderimg-cont {
+    height: 4rem;
+    width: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.leaderimg{
+    display: flex;
+    align-items: center;
+}
+
+.leaderimg-cont img {
+    height: 2.7rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.medalcont {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    height: 4rem;
+    width: 4rem;
+}
+
+.medalcont img {
+    height: fit-content;
+    width: 100%;
+    border-radius: 50%;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.champ {
+    border: 2px solid purple;
+}
+
+.champ-active {
+    background-color: purple;
+    color: var(--white);
+}
+
+/* Login styles */
+
+#login {
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding: 1rem;
+    padding-top: 1rem;
+    background-color: var(--white);
+}
+
+.welcome-text {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.login-img-cont {
+    height: 100%;
+    width: 100%;
+}
+
+.login-img-cont img {
+    height: 18rem;
+    width: 18rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.form-cont {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.check {
+    display: flex;
+    align-items: center;
+}
+
+.check-fp {
+    display: flex;
+    align-items: center;
+}
+
+.check-fp a {
+    font-size: 0.8rem;
+}
+
+.login {
+    padding: 1rem 1.2rem;
+    border-radius: 1.5rem;
+    background-color: black;
+    color: var(--white);
+    border: none;
+}
+
+.form-cont button {
+    margin-top: 1rem;
+}
+
+/* Quests styles */
+
+#weeklyQuest {
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    bottom: max-content;
+    background-color: var(--white);
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.questHeader {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.parent-cont {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-cont {
+    padding: 0.7rem;
+    height: 24rem;
+    box-shadow: 0 0 7rem hsl(0%, 0%, 80%);
+    border: 1px solid rgba(128, 128, 128, 0.144);
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.profile-header {
+    text-align: left;
+}
+
+.profile-imgcont {
+    height: 12rem;
+    width: 12rem;
+}
+
+.profile-imgcont img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-name {
+    text-align: center;
+}
+
+.profile-name p {
+    color: var(--gray);
+    font-weight: 700;
+}
+
+.achievements-cont {
+    margin: 1.4rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.awards {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    width: 8rem;
+    border-radius: 1rem;
+    font-family: var(--secondary-font);
+    box-shadow: hsl(0%, 0%, 80%) 0 0 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.awards-num {
+    font-family: var(--secondary-font);
+}
+
+.total-points {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    width: 8rem;
+    border-radius: 1rem;
+    font-family: var(--secondary-font);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.points-num {
+    font-family: var(--secondary-font);
+}
+
+.task-tracker {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(128, 128, 128, 0.233);
+    margin-top: 1rem;
+    padding: 1.5rem 1rem;
+    border-radius: 1rem;
+    height: 10rem;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.tracker-cont {
+    display: flex;
+    justify-content: space-between;
+}
+
+.quests-cont {
+    display: flex;
+    gap: 1rem;
+}
+
+.img-badge-cont {
+    height: 3rem;
+    width: 3rem;
+    background-color: var(--white);
+    border-radius: 50%;
+}
+
+.img-badge-cont img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.active-task {
+    font-family: var(--secondary-font);
+}
+
+.vtasks-cont {
+    display: flex;
+    justify-content: right;
+}
+
+.view-tasks {
+    background-color: purple;
+    width: 11rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    color: white;
+    border: none;
+}
+
+#questlog {
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: column;
+    text-align: left;
+    justify-content: center;
+    padding: 1rem;
+    background-color: var(--white);
+}
+
+.selected-task {
+    display: flex;
+    flex-direction: column;
+    border: 0.01rem solid grey;
+    padding: 1rem 1rem 1rem 0.7rem;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.task-name {
+    font-size: 0.9rem;
+    text-align: left;
+    font-family: var(--secondary-font);
+}
+
+.selected-task-cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.selected-img-cont {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+}
+
+.selected-img-cont img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.task-point {
+    text-align: left;
+    font-family: var(--secondary-font);
+}
+
+.quest-details-cont {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.quest-details {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.quest-task {
+    text-align: left;
+}
+
+.badges-category{
+    display: flex;
+    gap: 1rem;
+}
+
+.badges-category span{
+    border: 1px solid grey;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+}
+
+.active-badge{
+    border: 2px solid purple;
+}
+
+.badges{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem; 
+}
+
+.badge-cont{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+    padding: 1rem;
+    border: 1px solid grey;
+    gap: 1rem;
+}
+
+.badge-img-cont{
+    height: 20rem;
+    width: 20rem;
+}
+
+.badge-img-cont img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.desc{
+    font-family: var(--mystic);
+    font-size: 1.4rem;
+    font-weight: 1000;
+}
+
+.abilities{
+    text-align: left;
+    padding: 0.5rem 0rem 2rem 2rem;
+    font-weight: 700;
+    font-family: var(--tertiary-font);
+}
+
+.abilities ol{
+    list-style-type: lower-greek;
+}
