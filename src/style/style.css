@@ -96,18 +96,18 @@ html {
     right: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 video {
-    height: 2rem;
-    width: 2rem;
+    height: 2.5rem;
+    width: 2.5rem;
 }
 
 .navlinks a {
-    padding: 0.9rem;
     display: flex;
-    transition: ease-in 0s;
+    transition: ease-in 0.3s;
+    padding: 0.4rem;
 }
 
 .navlinks a:hover {
@@ -129,7 +129,7 @@ video {
 
 #home {
     position: absolute;
-    top: 0;
+    top: 5rem;
     left: 0;
     right: 0;
     bottom: 0;
@@ -137,7 +137,13 @@ video {
     flex-direction: column;
     padding: 1rem;
     background-color: var(--white);
-    margin-top: 3.5rem;
+}
+
+.random-images{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 1rem;
 }
 
 .card-cont {
@@ -222,7 +228,7 @@ i.bi-heart-fill {
 
 .signup-img img {
     height: 18rem;
-    width: 18rem;
+    width: 100%;
     object-fit: cover;
     border-radius: 0.5rem;
 }
@@ -290,6 +296,7 @@ input[type="email"] {
     padding: 1rem;
     padding-top: 1rem;
     background-color: var(--white);
+    height: fit-content;
 }
 
 #Leaderboard h1 {
@@ -362,8 +369,8 @@ input[type="email"] {
     display: flex;
     justify-content: right;
     align-items: center;
-    height: 4rem;
-    width: 4rem;
+    height: 3rem;
+    width: 3rem;
 }
 
 .medalcont img {
@@ -397,6 +404,7 @@ input[type="email"] {
     padding: 1rem;
     padding-top: 1rem;
     background-color: var(--white);
+    height: fit-content;
 }
 
 .welcome-text {
@@ -462,6 +470,7 @@ input[type="email"] {
     background-color: var(--white);
     margin-left: 1rem;
     margin-right: 1rem;
+    height: max-content;
 }
 
 .questHeader {
@@ -617,6 +626,7 @@ input[type="email"] {
     justify-content: center;
     padding: 1rem;
     background-color: var(--white);
+    height: max-content;
 }
 
 .selected-task {
@@ -626,10 +636,11 @@ input[type="email"] {
     padding: 1rem 1rem 1rem 0.7rem;
     gap: 1rem;
     margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .task-name {
-    font-size: 0.9rem;
+    font-size: 1rem;
     text-align: left;
     font-family: var(--secondary-font);
 }
@@ -678,6 +689,7 @@ input[type="email"] {
 .badges-category{
     display: flex;
     gap: 1rem;
+    margin-top: 1rem;
 }
 
 .badges-category span{
@@ -693,7 +705,7 @@ input[type="email"] {
 .badges{
     display: flex;
     flex-direction: column;
-    margin-top: 1rem;
+    margin-top: 1.2rem;
     justify-content: center;
     margin-bottom: 1.5rem;
     gap: 1rem; 
@@ -708,11 +720,12 @@ input[type="email"] {
     padding: 1rem;
     border: 1px solid grey;
     gap: 1rem;
+    width: 100%;
 }
 
 .badge-img-cont{
     height: 20rem;
-    width: 20rem;
+    width: 100%;
 }
 
 .badge-img-cont img{
@@ -729,11 +742,40 @@ input[type="email"] {
 
 .abilities{
     text-align: left;
-    padding: 0.5rem 0rem 2rem 2rem;
+    padding: 0.5rem 0rem 1rem 2rem;
     font-weight: 700;
     font-family: var(--tertiary-font);
 }
 
 .abilities ol{
     list-style-type: lower-greek;
+}
+
+@media screen and (min-width:397px) {
+
+    .questlog{
+        width: 23rem;
+        margin: auto;
+        padding: 0rem 0rem 1rem;
+    }
+
+    .selected-task{
+        width: 23rem;
+        margin: auto;
+    }
+
+    .badges-category{
+        width: 23rem;
+        margin: auto;
+    }
+
+    .questlog-header{
+        width: 23rem;
+        margin: auto;
+        padding: 1rem 0rem;
+    }
+
+    .badge-cont{
+        width: 23rem;
+    }
 }
